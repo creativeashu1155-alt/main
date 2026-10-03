@@ -25,7 +25,7 @@ h1{margin:0;font-size:31px;line-height:1.08;letter-spacing:-1.2px;font-weight:80
 .dot{width:7px;height:7px;border-radius:50%;background:#31f0aa;box-shadow:0 0 11px rgba(49,240,170,.75)}
 .hero{margin:18px auto 0;max-width:450px;font-size:22px;line-height:1.25;font-weight:850;letter-spacing:-.6px}.hero .yellow{color:#ffd84d;text-shadow:0 0 18px rgba(255,216,77,.13)}
 .description{margin:11px auto 0;max-width:450px;color:#9eaea7;font-size:12px;line-height:1.5}
-.cta{position:relative;display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:20px;padding:15px 18px;border:1px solid rgba(255,216,77,.72);border-radius:32px;text-decoration:none;background:linear-gradient(105deg,#15d98e 0%,#7affc7 46%,#ffd84d 100%);color:#03120b;font-size:18px;font-weight:1000;letter-spacing:.35px;text-shadow:0 1px 0 rgba(255,255,255,.22);box-shadow:0 12px 32px rgba(18,224,151,.26),0 0 0 4px rgba(33,238,163,.06);animation:ctaNudge 1.15s ease-in-out infinite,ctaGlow 1.8s ease-in-out infinite;overflow:hidden}
+.cta{position:relative;display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:20px;padding:15px 18px;border:1px solid rgba(255,216,77,.72);border-radius:32px;text-decoration:none;background:linear-gradient(105deg,#15d98e 0%,#7affc7 46%,#ffd84d 100%);color:#03120b;font-size:18px;font-weight:900;letter-spacing:.35px;text-shadow:0 1px 0 rgba(255,255,255,.22);box-shadow:0 12px 32px rgba(18,224,151,.26),0 0 0 4px rgba(33,238,163,.06);animation:ctaNudge 1.15s ease-in-out infinite,ctaGlow 1.8s ease-in-out infinite;overflow:hidden}
 .cta:before{content:"";position:absolute;inset:1px;border-radius:inherit;background:linear-gradient(110deg,transparent 15%,rgba(255,255,255,.42) 48%,transparent 75%);transform:translateX(-120%);animation:ctaShine 2.8s ease-in-out infinite;pointer-events:none}
 @keyframes ctaNudge{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}50%{transform:translateX(5px)}75%{transform:translateX(-3px)}}@keyframes ctaGlow{0%,100%{box-shadow:0 12px 32px rgba(18,224,151,.22),0 0 0 4px rgba(33,238,163,.06)}50%{box-shadow:0 15px 38px rgba(18,224,151,.38),0 0 0 6px rgba(33,238,163,.09)}}@keyframes ctaShine{0%,55%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}
 .cta:hover{animation:none;transform:translateY(-3px);filter:brightness(1.06)}.cta .plane{font-size:21px;line-height:1}
@@ -61,7 +61,6 @@ h1{margin:0;font-size:31px;line-height:1.08;letter-spacing:-1.2px;font-weight:80
 <p class="description">Simple daily tasks, zero cost to join. No spam, no hidden charges.</p>
 <div class="timer-wrap" aria-live="polite"><div class="timer-label">GET READY TO <span>JOIN FREE</span></div><div class="timer" id="joinTimer">00:10</div></div>\n<a class="cta" aria-label="Join Success With Me on Telegram for free" href="https://t.me/m/PuHAyliwYzJl" target="_blank" rel="noopener noreferrer" onclick="fbq('track','Subscribe',{content_name:'Telegram CTA'})"><span class="plane">✈️</span>JOIN TELEGRAM — IT'S FREE</a>
 <div class="cta-note"><span style="color:#ffffff">No payment</span> • <span style="color:#ffd84d">No registration fee</span> • <span style="color:#ffffff">Free access</span></div>
-<div class="countdown" aria-live="polite"><div class="countdown-label">GET READY • STARTING IN</div><div class="countdown-time"><span id="countdown">10</span><small> SEC</small></div></div>
 
 <div class="section-title">Why people <span>start here</span> <span style="color:#ffffff">✦</span></div>
 <section class="features"><div class="feature"><div class="icon">💰</div><div class="label">Free to Join</div></div><div class="feature"><div class="icon">📋</div><div class="label">Daily Tasks</div></div><div class="feature"><div class="icon">⚡</div><div class="label">Simple Setup</div></div><div class="feature"><div class="icon">🔐</div><div class="label">Community Updates</div></div></section>
@@ -84,19 +83,27 @@ h1{margin:0;font-size:31px;line-height:1.08;letter-spacing:-1.2px;font-weight:80
 
 <p class="disclaimer">Joining the channel is free. Results and earnings from any task can vary and are not guaranteed. Please do your own research before proceeding.</p>
 </main>
-<script>\n(function(){const el=document.getElementById('joinTimer');let n=10;const tick=()=>{el.textContent='00:'+String(n).padStart(2,'0');if(n===0){el.classList.add('done');el.textContent='READY';return}n--;setTimeout(tick,1000)};tick()})();\n</script>\n<a class="sticky-cta" href="https://t.me/m/PuHAyliwYzJl" target="_blank" rel="noopener noreferrer" onclick="fbq('track','Subscribe',{content_name:'Sticky Telegram CTA'})">✈️ Join Telegram — Free</a>
-</div>
 <script>
 (function(){
-  var el=document.getElementById('countdown');
-  if(!el)return;
+  var el=document.getElementById('joinTimer');
+  var cta=document.querySelector('.cta');
+  if(!el||!cta)return;
   var seconds=10;
-  el.textContent=seconds;
-  var timer=setInterval(function(){
+  function tick(){
+    el.textContent='00:'+String(seconds).padStart(2,'0');
+    if(seconds===0){
+      el.classList.add('done');
+      el.textContent='READY';
+      fbq('track','Subscribe',{content_name:'Auto Telegram CTA'});
+      window.location.href=cta.href;
+      return;
+    }
     seconds--;
-    if(seconds<=0){seconds=0;clearInterval(timer);}
-    el.textContent=seconds;
-  },1000);
+    setTimeout(tick,1000);
+  }
+  tick();
 })();
-</script></body>
+</script>
+<a class="sticky-cta" href="https://t.me/m/PuHAyliwYzJl" target="_blank" rel="noopener noreferrer" onclick="fbq('track','Subscribe',{content_name:'Sticky Telegram CTA'})">✈️ Join Telegram — Free</a>
+</div></body>
 </html>
