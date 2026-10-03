@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Join Telegram Channel</title>
+<meta name="description" content="Join our Telegram channel for the latest updates.">
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{background:radial-gradient(circle at 50% 0,#243b68 0,#101827 38%,#070b12 100%);color:#fff;display:flex;justify-content:center}
+.page{width:100%;max-width:560px;min-height:100vh;padding:24px 18px 36px;display:flex;align-items:center;justify-content:center}
+.card{width:100%;padding:34px 24px;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:rgba(12,18,30,.82);box-shadow:0 24px 80px rgba(0,0,0,.42);backdrop-filter:blur(18px);text-align:center}
+.logo{width:78px;height:78px;margin:0 auto 20px;border-radius:24px;display:grid;place-items:center;background:linear-gradient(145deg,#2aabee,#1677d2);box-shadow:0 12px 35px rgba(42,171,238,.3);font-size:38px}
+.badge{display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(42,171,238,.1);border:1px solid rgba(42,171,238,.25);font-size:12px;font-weight:700;color:#8ed8ff}
+h1{font-size:clamp(32px,8vw,48px);line-height:1.05;margin:16px 0 12px;letter-spacing:-1.5px}
+p{margin:0 auto;color:#aeb8c8;line-height:1.65;font-size:15px;max-width:430px}
+.cta{margin-top:26px;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:17px 22px;border-radius:16px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#2aabee,#1677d2);font-size:17px;font-weight:800;box-shadow:0 12px 32px rgba(42,171,238,.24);transition:.2s}
+.cta:hover{transform:translateY(-2px)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.feature{padding:14px 8px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);font-size:12px;color:#cbd3df}
+.icon{font-size:20px;margin-bottom:7px}
+.note{margin-top:22px;font-size:11px;color:#697587}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1360885335597921');fbq('track','PageView');
+</script>
+</head>
+<body>
+<main class="page"><section class="card">
+<div class="logo">✈️</div>
+<div class="badge">OFFICIAL CHANNEL</div>
+<h1>Join Telegram Channel</h1>
+<p>Get the latest updates, announcements and exclusive content directly on Telegram.</p>
+<a class="cta" href="https://t.me/xerocodebot" target="_blank" rel="noopener noreferrer" id="telegram-cta">✈️ Join Telegram Channel</a>
+<div class="features">
+<div class="feature"><div class="icon">⚡</div>Instant Updates</div>
+<div class="feature"><div class="icon">🔔</div>Latest Alerts</div>
+<div class="feature"><div class="icon">🔒</div>Free & Secure</div>
+</div>
+<div class="note">Tap the button above to open Telegram.</div>
+</section></main>
+<script>
+document.getElementById('telegram-cta').addEventListener('click',function(){
+  if(window.fbq){fbq('track','Subscribe',{content_name:'Telegram CTA'});fbq('trackCustom','TelegramManualClick');}
+});
+</script>
+</body>
+</html>
