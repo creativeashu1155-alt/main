@@ -96,6 +96,18 @@ h1{margin:0;font-size:31px;line-height:1.08;letter-spacing:-1.2px;font-weight:80
 
 <p class="disclaimer reveal">Joining the channel is free. Results and earnings from any task can vary and are not guaranteed. Please do your own research before proceeding.</p>
 </main>
+<script>
+(function(){
+  var items=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){items.forEach(function(el){el.classList.add('visible')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){entry.target.classList.add('visible');io.unobserve(entry.target)}
+    });
+  },{threshold:.12});
+  items.forEach(function(el){io.observe(el)});
+})();
+</script>
 
 <a class="sticky-cta" href="https://t.me/m/rkb5VoKJM2Jl" target="_blank" rel="noopener noreferrer" onclick="fbq('track','Subscribe',{content_name:'Sticky Telegram CTA'})">✈️ Join Telegram Now — It's Free</a>
 </div></body>
