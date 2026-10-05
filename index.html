@@ -51,14 +51,14 @@ h1 .green{color:#43f4ae;text-shadow:0 0 18px rgba(50,242,173,.12)}
 @keyframes floatLogo{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-7px) rotate(1deg)}}
 @keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @keyframes pulseGreen{0%,100%{box-shadow:0 10px 25px rgba(18,224,151,.2),0 0 0 3px rgba(33,238,163,.05)}50%{box-shadow:0 14px 34px rgba(18,224,151,.34),0 0 0 6px rgba(33,238,163,.07)}}
-@keyframes floatCtaBtn{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes floatCtaBtn{0%,100%{transform:translateY(0)}50%{transform:translateY(-3.5px)}}
 @keyframes shimmer{0%{transform:translateX(-130%)}55%,100%{transform:translateX(130%)}}
 .logo{animation:floatLogo 4s ease-in-out infinite}
 .feature{animation:floatCard 4.8s ease-in-out infinite}
 .feature:nth-child(2){animation-delay:.35s}.feature:nth-child(3){animation-delay:.7s}.feature:nth-child(4){animation-delay:1.05s}
 .status .dot{animation:pulseDot 1.6s ease-in-out infinite}
 @keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.72)}}
-.cta{animation:pulseGreen 2.8s ease-in-out infinite}
+.cta{animation:pulseGreen 2.8s ease-in-out infinite,floatCtaBtn 5.2s ease-in-out infinite}
 .cta:after{content:"";position:absolute;top:0;bottom:0;width:70px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transform:translateX(-130%);animation:shimmer 3.2s ease-in-out infinite;pointer-events:none}
 @media(prefers-reduced-motion:reduce){.logo,.feature,.cta,.status .dot,.cta:after{animation:none}}
 </style>
