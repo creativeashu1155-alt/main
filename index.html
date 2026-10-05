@@ -44,6 +44,19 @@ h1 .green{color:#43f4ae;text-shadow:0 0 18px rgba(50,242,173,.12)}
 .disclaimer{margin:12px auto 0;max-width:460px;color:#71847b;font-size:8.5px;line-height:1.45}
 .sticky-cta{display:none}
 @media(max-width:480px){.container{padding:52px 18px 24px}.logo{width:62px;height:62px}h1{font-size:28px}.hero{font-size:20px}.description{font-size:10.5px}.feature{min-height:68px}.feature .label{font-size:10px}.stat strong{font-size:17px}.cta{font-size:15px;padding:12px}.timer-label{font-size:9px}}}
+
+@keyframes floatLogo{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-7px) rotate(1deg)}}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes pulseGreen{0%,100%{box-shadow:0 10px 25px rgba(18,224,151,.2),0 0 0 3px rgba(33,238,163,.05)}50%{box-shadow:0 14px 34px rgba(18,224,151,.34),0 0 0 6px rgba(33,238,163,.07)}}
+@keyframes shimmer{0%{transform:translateX(-130%)}55%,100%{transform:translateX(130%)}}
+.logo{animation:floatLogo 4s ease-in-out infinite}
+.feature{animation:floatCard 4.8s ease-in-out infinite}
+.feature:nth-child(2){animation-delay:.35s}.feature:nth-child(3){animation-delay:.7s}.feature:nth-child(4){animation-delay:1.05s}
+.status .dot{animation:pulseDot 1.6s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.72)}}
+.cta{animation:pulseGreen 2.8s ease-in-out infinite}
+.cta:after{content:"";position:absolute;top:0;bottom:0;width:70px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transform:translateX(-130%);animation:shimmer 3.2s ease-in-out infinite;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.logo,.feature,.cta,.status .dot,.cta:after{animation:none}}
 </style>
 </head>
 <body>
@@ -66,7 +79,7 @@ h1 .green{color:#43f4ae;text-shadow:0 0 18px rgba(50,242,173,.12)}
 
 <section class="stats"><div class="stat"><strong>5K+</strong><span>MEMBERS</span></div><div class="stat"><strong>100%</strong><span>FREE</span></div><div class="stat"><strong>24/7</strong><span>UPDATES</span></div></section>
 
-<a class="cta" aria-label="Join Earn With Aarohi on Telegram for free" href="https://t.me/m/Z08pPog4ZDE1" target="_blank" rel="noopener noreferrer" onclick="fbq('track','Subscribe',{content_name:'Telegram CTA'})"><span class="plane">✈️</span>Join Telegram Channel</a>
+<a class="cta" aria-label="Join Earn With Aarohi on Telegram for free" href="https://t.me/m/Z08pPog4ZDE1" target="_blank" rel="noopener noreferrer" onclick="fbq('track','Subscribe',{content_name:'Telegram CTA'})"><span class="plane">✈️</span>Join Free — Start Now</a>
 
 <div class="timer-wrap"><span class="timer-label">Opening Telegram in <b id="timerText">10s</b> — or tap above</span><div class="progress-track"><div class="progress-bar" id="joinProgress"></div></div></div>
 
